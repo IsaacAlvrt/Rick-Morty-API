@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title%}Rick n Morty{% endblock %}
+
+{% block content%}
+    {% for x in data%}
+        <div class="container" style="display: inline-table; width: auto; height: auto;">
+            <div class="card bg-light" style="width: 18rem; margin-top: 2rem;">
+                <a href="/character/{{x['id']}}">
+                    <img src="{{x['image']}}" class="card-img-top p-2" alt="{{x['name']}}">
+                </a>
+                <div class="card-body">
+                <h5 class="card-title"><strong>{{x['name']}}</strong></h5>
+                <h6> {{x['origin']['name']}} </h6>
+                <p> {{ x['species'] }} <br> {{ x['status'] }} </p>
+                <p> </p>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}

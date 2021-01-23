@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title%}{{character['name']}}{% endblock %}
+
+{% block content%}
+
+    <div class="container p-2 mt-2">
+        <div class="row" style="max-width: 80%; display: flex;">
+            <div class="col-6">
+                <img src="{{character['image']}}" class="card-img-top p-2" alt="{{character['name']}}">
+            </div>
+            <div class="col-6">
+                <h2 class="card-title"><strong>{{character['name']}}</strong></h2>
+                <h4> {{character['origin']['name']}} </h4>
+                <br>
+                <h5> 
+                    Species: {{ character['species'] }}<br>
+                    Status: {{ character['status'] }}<br>
+                    Gender: {{ character['gender'] }}<br>
+                    Location: {{ character['location']['name'] }}
+                </h5>
+                <br>
+                <a href="/" class="btn btn-outline-dark"><strong>Go back</strong></a>
+            </div>
+        </div>
+    </div>
+    
+{% endblock %}
